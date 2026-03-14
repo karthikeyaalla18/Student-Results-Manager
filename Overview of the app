@@ -1,0 +1,68 @@
+***Student Results Manager***
+
+A smart, faculty-first web application to analyze student exam results — instantly rank students, detect backlogs, and generate analytics from any file format.
+Student Results Manager is a React-based tool built for teachers and academic coordinators. After uploading a result sheet (CSV, Excel, or university PDF), the application 
+automatically parses the data, ranks every student by SGPA/CGPA, flags who has backlogs, and presents it all in a clean analytics dashboard — no manual processing needed.
+Whether you're checking who failed, counting pending subjects, or comparing branch-wise performance, this tool gives you answers in seconds.
+
+ Features
+ Multi-Format File Support
+
+CSV / TSV / TXT — standard comma or tab-separated result sheets
+Excel (XLSX / XLS / XLSM) — department or university spreadsheets
+PDF — university-generated grade reports with spatial text extraction (powered by PDF.js)
+Drag-and-drop upload or click-to-browse
+Sample demo data available without any file upload
+
+ Auto-Ranked Results Table
+
+Students automatically sorted by SGPA/CGPA (highest to lowest)
+Top 3 ranks highlighted in Gold / Silver / Bronze
+Click any row to expand a detailed student card
+Sortable columns: Roll No, Name, Branch, Section, SGPA, Backlogs
+
+ Smart Search & Filters
+
+Real-time search by name, roll number, branch, section, or SGPA
+Filter by Branch and Section via dropdowns
+Backlog filter: All Students / Zero Backlogs / Has Backlogs / Active Backlogs only
+Group by Section toggle for section-wise view
+One-click Clear Filters button
+
+Analytics Dashboard
+
+SGPA Distribution bar chart — visualizes how students are spread across grade ranges
+Backlog Distribution bar chart — count of students by number of backlogs
+Section-wise Summary table — avg SGPA, highest, lowest, clear count, pass rate per section
+Branch-wise Summary table — aggregate stats across all branches
+10-Point Grading Scale reference panel
+
+Overview Stats Bar
+At a glance, see:
+
+Total Students | Average SGPA | Highest & Lowest SGPA
+SGPA 9.0+ and 8.0+ counts
+Zero Backlogs | With Backlogs | Total & Active Backlogs
+Pass Rate | At Risk (below 5.0)
+
+ Export
+
+Download complete ranked results as a clean CSV file with columns: Rank, Name, Roll No, Branch, Section, SGPA, Backlogs, Active Backlogs, Performance label
+
+
+ Smart Parsing Logic
+The parser is designed to handle real-world, inconsistently formatted files:
+
+Auto-detects column headers — recognizes variations like CGPA, SGPA, GPA, CPI, Marks, Percentage, etc.
+Roll number detection — finds roll/hall ticket/enrollment/USN/PRN columns automatically
+Backlog counting — counts subjects with a grade of 0 from grade columns in PDFs; reads explicit backlog columns from spreadsheets
+Active vs. total backlogs — distinguishes cleared vs. pending backlog subjects
+Branch / Section / Semester extraction — pulled from column data or PDF metadata headers
+Delimiter auto-detection — handles comma, semicolon, and tab-separated files
+
+
+ Grading Scale (10-Point)
+SGPA RangeLabel9.0 +Outstanding8.0 – 8.9Excellent7.0 – 7.9Very Good6.0 – 6.9Good5.0 – 5.9Average4.0 – 4.9Below AvgBelow 4.0Poor / Fail
+
+ Tech Stack
+LayerTechnologyFrameworkReact (Hooks — useState, useMemo, useRef, useEffect)ChartsD3.jsSpreadsheetSheetJS (xlsx)PDF ParsingPDF.js (v4.4, CDN)StylingInline styles with CSS variables, glassmorphism designFontsOutfit + JetBrains Mono (Google Fonts)
