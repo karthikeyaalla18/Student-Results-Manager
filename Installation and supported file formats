@@ -1,0 +1,37 @@
+Getting Started
+Prerequisites
+
+Node.js 18+
+A React project setup (Vite, Create React App, etc.)
+
+Installation
+bash# Clone the repo
+git clone https://github.com/your-username/student-results-manager.git
+cd student-results-manager
+
+# Install dependencies
+npm install
+
+# Start the dev server
+npm run dev
+Usage
+
+Drop the component file into your React project's src/ folder
+Import and render it as the root component:
+
+jsximport App from './student-results-manager';
+
+function Root() {
+  return <App />;
+}
+
+Open the app in your browser, upload a student result file, and click Show Results.
+
+
+ Supported File Formats — Column Requirements
+For best results, your file should contain at least:
+ColumnAccepted Header NamesRoll Numberroll, id, reg, enroll, htno, hallticket, usn, prnStudent Namename, studentSGPA / CGPAsgpa, cgpa, gpa, cpi, cumulative, spiBacklogsbacklog,
+arrear, kt, atkt, fail, supplyBranchbranch, dept, department, stream, programSectionsection, sec, div, division
+
+PDF files: The parser uses spatial text extraction. It works best with university result PDFs that include Roll No, grade columns (with 0 for failed subjects), and SGPA in a
+tabular format.
